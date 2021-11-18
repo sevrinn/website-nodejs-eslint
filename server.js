@@ -15,8 +15,6 @@ app.get('/speakers', (req, res) => {
   res.sendFile(path.join(__dirname, './static/speakers.html'))
 })
 
-console.log("restarting")
-
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}`)
 })
