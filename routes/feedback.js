@@ -11,9 +11,7 @@ module.exports = (params) => {
     res.json(feedback)
   })
 
-  router.post('/', async (req, res) => {
-    return res.send('Feedback from posted')
-  })
+  router.post('/', async (req, res) => res.send('Feedback from posted'))
 
   return router
 }
