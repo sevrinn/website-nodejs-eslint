@@ -15,7 +15,7 @@ module.exports = (params) => {
     req.session.visitcount += 1
     console.log(`Number of visits: ${req.session.visitcount}`)
 
-    res.render('pages/index', { pageTitle: 'Welcome'})
+    res.render('layout', { pageTitle: 'Welcome', template: 'index'})
   })
 
   router.use('/speakers', speakerRoute(params))
