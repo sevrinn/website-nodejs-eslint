@@ -1,12 +1,19 @@
-const { response } = require('express')
 const express = require('express')
 
 const router = express.Router()
 
-module.exports = () => {
-  router.get('/', (req, res) => res.send('Feedback page'))
+module.exports = (params) => {
 
-  router.post('/', (req, res) => res.send('Feed back form posted'))
+  const {feedbackService} = params
+
+  router.get('/', async (req, res) => {
+    const feedback = await feedbackService.getList()
+    res.json(feedback)
+  })
+
+  router.post('/', async (req, res) => {
+    return res.send('Feedback from posted')
+  })
 
   return router
 }
