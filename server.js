@@ -5,6 +5,9 @@ const routes = require("./routes")
 const FeedbackService = require('./services/FeedbackService')
 const SpeakersService = require('./services/SpeakerService')
 
+const feedbackService = new FeedbackService('./data/feedback.json')
+const speakersService = new SpeakersService('./data/speakers.json')
+
 const app = express()
 
 const port = 3000
